@@ -1,13 +1,13 @@
 package functions
 
-func Exponential(to_search []int, to_find int) int {
-	if to_search[0] == to_find {
+func Exponential(toSearch []int, toFind int) int {
+	if toSearch[0] == toFind {
 		return 0
 	}
-	len := len(to_search)
+	len := len(toSearch)
 	i := 1
-	for i < len && to_search[i] <= to_find {
+	for i < len && toSearch[i] <= toFind {
 		i *= 2
 	}
-	return Binary(to_search, i / 2, Min(i, len-1), to_find)
+	return Binary(toSearch, i / 2, Min(i, len-1), toFind)
 }

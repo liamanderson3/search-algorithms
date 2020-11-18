@@ -4,27 +4,27 @@ import (
 	"math"
 )
 
-func Jump(to_search []int, to_find int) int {
-	len := len(to_search)
-	base_step := int(math.Sqrt(float64(len)))
-	step := base_step
+func Jump(toSearch []int, toFind int) int {
+	len := len(toSearch)
+	baseStep := int(math.Sqrt(float64(len)))
+	step := baseStep
 	prev := 0
-	for to_search[Min(step, len)-1] < to_find {
+	for toSearch[Min(step, len)-1] < toFind {
 		prev = step
-		step += base_step
-		if prev >= to_find {
+		step += baseStep
+		if prev >= toFind {
 			return -1
 		}
 	}
-	
-	for to_search[prev] < to_find {
-		prev += 1
+
+	for toSearch[prev] < toFind {
+		prev++
 		if prev == Min(step, len) {
 			return -1
 		}
 	}
 
-	if to_search[prev] == to_find {
+	if toSearch[prev] == toFind {
 		return prev
 	}
 
